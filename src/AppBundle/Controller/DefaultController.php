@@ -21,7 +21,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/page/2", name="page2")
-     * @Security("has_role('ADMIN') or has_role('PAGE_2')")
+     * @Security("has_role('ROLE_ADMIN') or has_role('PAGE_2')")
      */
     public function page2Action()
     {
