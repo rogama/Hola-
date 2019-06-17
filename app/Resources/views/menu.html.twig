@@ -1,0 +1,27 @@
+{% block menu %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Hola!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_PAGE1') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('page1') }}">Page 1</a>
+                    </li>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_PAGE1') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('page2') }}">Page 2</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('logout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
